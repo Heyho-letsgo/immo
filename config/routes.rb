@@ -1,4 +1,6 @@
 Immo::Application.routes.draw do
+  resources :acquereurs
+
   resources :articles
 
   #get "home/index"

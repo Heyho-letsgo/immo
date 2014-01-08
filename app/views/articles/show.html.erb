@@ -12,7 +12,7 @@
 
 <p>
   <strong>Titre:</strong>
-  <%= @article.titre %>
+<font color="red"><%= @article.titre %></font>
 </p>
 
 <p>
@@ -23,6 +23,15 @@
   <strong>Price:</strong>
   <%= @article.price %>
 </p>
+  <strong>Jour:</strong>
+  <%= @article.jour %>
+</p>
+</p>
+  <strong>Age:</strong>
+  <%= @article.age %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

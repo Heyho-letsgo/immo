@@ -7,7 +7,8 @@
       <th>Titre</th>
       <th>Contenu</th>
       <th>Price</th>
-
+      <th>Jour</th>
+      <th>Age</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,13 +18,16 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.nom %></td>
-        <td><%= article.titre %></td>
+        <td><%= article.nom.capitalize %></td>
+        <td><%= article.titre.capitalize %></td>
         <td><%= article.contenu %></td>
         <td><%= article.price %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= article.jour %></td>
+        <td><%= article.age %></td>
+        
+        <td><%= link_to 'S', article %></td>
+        <td><%= link_to 'E', edit_article_path(article) %></td>
+        <td><%= link_to 'D', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,3 +36,4 @@
 <br>
 
 <%= link_to 'New Article', new_article_path %>
+<%= link_to 'Accueil', new_article_path %>
