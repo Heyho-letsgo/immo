@@ -5,7 +5,8 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
-  end
+    @articles = Article.order(nom: :desc) 
+      end
 
   # GET /articles/1
   # GET /articles/1.json
@@ -59,9 +60,16 @@ class ArticlesController < ApplicationController
       format.html { redirect_to articles_url }
       format.json { head :no_content }
     end
+
   end
 
-  private
+
+    def find_last
+      @article = Article.last
+      
+    end
+
+ #private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])

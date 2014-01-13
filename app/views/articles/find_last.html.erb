@@ -1,0 +1,45 @@
+<h1>Listing articles</h1>
+<!-- script pour le debut du chargement -->
+  <script type="text/javascript">
+  <!--
+  //-->
+  </script>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Titre</th>
+      <th>Contenu</th>
+      <th>Price</th>
+      <th>Jour</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+   
+      <tr>
+        <td><%= @article.nom.capitalize %></td>
+        <td><%= @article.titre.capitalize %></td>
+        <td><%= @article.contenu %></td>
+        <td><%= @article.price %></td>
+        <td><%= @article.jour %></td>
+        <td><%= @article.age %></td>
+        
+        <td><%= link_to 'S', @article %></td>
+        <td><%= link_to 'E', edit_article_path(@article) %></td>
+        <td><%= link_to 'D', @article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= button_to "Nouvel article", new_article_path, :class => "button", :method => :get  %>
+<%= button_to "Accueil", root_path, :class => "button", :method => :get  %>
+<%= button_to "Recherche", articles_search_path, :class => "button", :method => :get  %>

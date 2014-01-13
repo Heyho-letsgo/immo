@@ -1,5 +1,12 @@
 <h1>Listing articles</h1>
+<!-- script pour le debut du chargement -->
+  <script type="text/javascript">
+  <!--
+    alert('Debut du chargement de la page');
+  //-->
+  </script>
 
+<a href="#" onclick="alert('Bonjour !');">JavaScript</a>
 <table>
   <thead>
     <tr>
@@ -35,5 +42,8 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
-<%= link_to 'Accueil', new_article_path %>
+<%= button_to "Nouvel article", new_article_path, :class => "button", :method => :get  %>
+<%= button_to "Accueil", root_path, :class => "button", :method => :get  %>
+<%= button_to "Recherche", articles_search_path, :class => "button", :method => :get  %>
+
+
